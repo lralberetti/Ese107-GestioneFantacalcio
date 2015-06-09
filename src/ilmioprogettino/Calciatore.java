@@ -1,6 +1,6 @@
 package ilmioprogettino;
 
-public class Calciatore {
+public abstract class Calciatore {
 	private String nome;
 	private String ruolo;
 	private double prezzo;

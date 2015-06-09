@@ -5,8 +5,7 @@ public class Manager {
 	private String nome;
 	private double budget;
 	
-	public Manager(Rosa rosa, String nome, double budget) {
-		this.rosa = rosa;
+	public Manager( String nome, double budget) {
 		if(nome.length()==0)
 			throw new IllegalArgumentException ("Cannot be 0");
 		else
