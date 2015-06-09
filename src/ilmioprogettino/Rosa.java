@@ -15,6 +15,8 @@ public class Rosa {
 		this.difensori = difensori;
 		this.centrocampisti = centrocampisti;
 		this.attaccanti = attaccanti;
+		if(manager== null)
+			throw new IllegalArgumentException ("Cannot be NULL");
 		this.manager = manager;
 	}
 
@@ -43,7 +45,10 @@ public class Rosa {
 	}
 	
 	public void addPortiere(Portiere p){
-		if(p!=null){
+		if(p.getPrezzo()>manager.getBudgetResiduo()){
+			throw new IllegalArgumentException ("Cannot add this goalkeeper because your budget isn't enought");
+		}
+		else if(p!=null){
 			portieri.add(p);
 		}
 		else
@@ -51,7 +56,10 @@ public class Rosa {
 	}
 	
 	public void addDifensore(Difensore d){
-		if(d!=null){
+		if(d.getPrezzo()>manager.getBudgetResiduo()){
+			throw new IllegalArgumentException ("Cannot add this defender because your budget isn't enought");
+		}
+		else if(d!=null){
 			difensori.add(d);
 		}
 		else
@@ -59,7 +67,10 @@ public class Rosa {
 	}
 	
 	public void addCentrocampista(Centrocampista c){
-		if(c!=null){
+		if(c.getPrezzo()>manager.getBudgetResiduo()){
+			throw new IllegalArgumentException ("Cannot add this midfielder because your budget isn't enought");
+		}
+		else if(c!=null){
 			centrocampisti.add(c);
 		}
 		else
@@ -67,11 +78,41 @@ public class Rosa {
 	}
 
 	public void addAttaccante(Attaccante a){
-		if(a!=null){
+		if(a.getPrezzo()>manager.getBudgetResiduo()){
+			throw new IllegalArgumentException ("Cannot add this striker because your budget isn't enought");
+		}
+		else if(a!=null){
 			attaccanti.add(a);
 		}
 		else
-			throw new IllegalArgumentException ("Add new forward");
+			throw new IllegalArgumentException ("Add new striker");
 	}	
-	
+	public void RemoveCalciatore(Calciatore c){
+		if(c==null)
+			throw new IllegalArgumentException ("Cannot be null");
+		else if(c.getRuolo().equals("Attaccante")){
+			for(int i=0;i<getAttaccanti().size();i++){
+				if(c==getAttaccanti().elementAt(i))
+					attaccanti.remove(i);
+			}
+		}
+		if(c.getRuolo().equals("Centrocampista")){
+			for(int i=0;i<getCentrocampisti().size();i++){
+				if(c==getCentrocampisti().elementAt(i))
+					centrocampisti.remove(i);
+			}
+		}
+		if(c.getRuolo().equals("Difensore")){
+			for(int i=0;i<getDifensori().size();i++){
+				if(c==getDifensori().elementAt(i))
+					difensori.remove(i);
+			}
+		}
+		if(c.getRuolo().equals("Portiere")){
+			for(int i=0;i<getPortieri().size();i++){
+				if(c==getPortieri().elementAt(i))
+					portieri.remove(i);
+			}
+		}
+	}
 }

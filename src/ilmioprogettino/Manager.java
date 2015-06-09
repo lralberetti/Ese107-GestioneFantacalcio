@@ -33,6 +33,26 @@ public class Manager {
 		return budget;
 	}
 	
-	
 
+	public double getBudgetResiduo(){
+		double budgetResiduo;
+		budgetResiduo=this.budget;
+		for(int i=0;i<rosa.getAttaccanti().size();i++){
+			Attaccante a=rosa.getAttaccanti().elementAt(i);
+			budgetResiduo-=a.getPrezzo();
+		}
+		for(int i=0;i<rosa.getCentrocampisti().size();i++){
+			Centrocampista c=rosa.getCentrocampisti().elementAt(i);
+			budgetResiduo-=c.getPrezzo();
+		}
+		for(int i=0;i<rosa.getDifensori().size();i++){
+			Difensore d=rosa.getDifensori().elementAt(i);
+			budgetResiduo-=d.getPrezzo();
+		}
+		for(int i=0;i<rosa.getPortieri().size();i++){
+			Portiere p=rosa.getPortieri().elementAt(i);
+			budgetResiduo-=p.getPrezzo();
+		}
+		return budgetResiduo;
+	}
 }
