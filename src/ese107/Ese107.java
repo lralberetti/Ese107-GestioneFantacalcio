@@ -59,11 +59,47 @@ public class Ese107 {
 		for(int i=0;i<c.size();i++){
 			System.out.println(c.elementAt(i).toString());
 		}
-		System.out.println("Scrivi il giocatore che vuoi acquistare:");
+		
 		InputStreamReader input = new InputStreamReader(System.in);
 	    BufferedReader tastiera = new BufferedReader(input);
 	    String scelta;
-        scelta = tastiera.readLine();
+        System.out.println("Scrivi il nome dell'attaccante che vuoi acquistare:");
+        for(int i=0;i<5;i++){
+        	scelta = tastiera.readLine();
+        	 for(int y=0; y<c.size(); y++){
+        		 if(scelta.equals(c.elementAt(i).getNome())){
+        			 manager.getRosa().addAttaccante((Attaccante)c.elementAt(i));
+        		 }
+        		 
+        	 }
+        }
+        for(int i=0;i<7;i++){
+        	scelta = tastiera.readLine();
+       	 for(int y=0; y<c.size(); y++){
+       		 if(scelta.equals(c.elementAt(i).getNome())){
+       			 manager.getRosa().addCentrocampista((Centrocampista)c.elementAt(i));
+       		 }
+       	 }
+       }
+        for(int i=0;i<5;i++){
+        	scelta = tastiera.readLine();
+       	 for(int y=0; y<c.size(); y++){
+       		 if(scelta.equals(c.elementAt(i).getNome())){
+       			 manager.getRosa().addDifensore((Difensore)c.elementAt(i));
+       		 }
+       	 }
+       }
+        for(int i=0;i<2;i++){
+        	scelta = tastiera.readLine();
+       	 for(int y=0; y<c.size(); y++){
+       		 if(scelta.equals(c.elementAt(i).getNome())){
+       			 manager.getRosa().addPortiere((Portiere)c.elementAt(i));
+       		 }
+       	 }
+       }
+       
+       
+        	
 	}
 
 }

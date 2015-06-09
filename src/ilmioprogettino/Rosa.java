@@ -122,4 +122,5 @@ public class Rosa {
 				+ ", centrocampisti=" + centrocampisti + ", attaccanti="
 				+ attaccanti + ", manager=" + manager + "]";
 	}
+
 }
