@@ -33,4 +33,10 @@ public abstract class Calciatore {
 		return prezzo;
 	}
 
+	@Override
+	public String toString() {
+		return "Calciatore [nome=" + nome + ", ruolo=" + ruolo + ", prezzo="
+				+ prezzo + "]";
+	}
+
 }

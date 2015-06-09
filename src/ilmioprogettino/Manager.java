@@ -54,4 +54,10 @@ public class Manager {
 		}
 		return budgetResiduo;
 	}
+
+	@Override
+	public String toString() {
+		return "Manager [rosa=" + rosa + ", nome=" + nome + ", budget="
+				+ budget + "]";
+	}
 }

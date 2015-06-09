@@ -115,4 +115,11 @@ public class Rosa {
 			}
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Rosa [portieri=" + portieri + ", difensori=" + difensori
+				+ ", centrocampisti=" + centrocampisti + ", attaccanti="
+				+ attaccanti + ", manager=" + manager + "]";
+	}
 }
