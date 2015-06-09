@@ -8,13 +8,11 @@ public class Rosa {
 	private Vector<Attaccante>attaccanti;
 	private Manager manager;
 	
-	public Rosa(Vector<Portiere> portieri, Vector<Difensore> difensori,
-			Vector<Centrocampista> centrocampisti,
-			Vector<Attaccante> attaccanti, Manager manager) {
-		this.portieri = portieri;
-		this.difensori = difensori;
-		this.centrocampisti = centrocampisti;
-		this.attaccanti = attaccanti;
+	public Rosa(Manager manager) {
+		this.portieri = new Vector<Portiere>();
+		this.difensori = new Vector<Difensore>();
+		this.centrocampisti = new Vector<Centrocampista>();
+		this.attaccanti = new Vector<Attaccante>();
 		if(manager== null)
 			throw new IllegalArgumentException ("Cannot be NULL");
 		this.manager = manager;
@@ -87,6 +85,7 @@ public class Rosa {
 		else
 			throw new IllegalArgumentException ("Add new striker");
 	}	
+	
 	public void RemoveCalciatore(Calciatore c){
 		if(c==null)
 			throw new IllegalArgumentException ("Cannot be null");

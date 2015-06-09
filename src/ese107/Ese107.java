@@ -9,6 +9,8 @@ public class Ese107 {
 		Manager manager=new Manager("Francesco Trotta",700.000);
 		Manager manager2=new Manager("Paolo Testi",700.000);
 		
+		Rosa rosa=new Rosa(manager);
+		manager.setRosa(rosa);
 		
 		Vector<Calciatore> c = new Vector<Calciatore>();
 		c.add(new Attaccante("Federico The Spark Braconi","Attaccante",15.000));
@@ -56,24 +58,28 @@ public class Ese107 {
 		c.add(new Portiere("X-MEN","Portiere",22.000));
 		
 		
-		for(int i=0;i<c.size();i++){
+		for(int i=0;i<c.size();i++) {
 			System.out.println(c.elementAt(i).toString());
 		}
 		
 		InputStreamReader input = new InputStreamReader(System.in);
 	    BufferedReader tastiera = new BufferedReader(input);
 	    String scelta;
-        System.out.println("Scrivi il nome dell'attaccante che vuoi acquistare:");
-        for(int i=0;i<5;i++){
+	    boolean nomeEsistente = false;
+	    
+        for(int i=0;i<6;i++) {
+        	System.out.print("Scrivi il nome dell'attaccante " + (i+1) + " che vuoi acquistare: ");
         	scelta = tastiera.readLine();
-        	 for(int y=0; y<c.size(); y++){
-        		 if(scelta.equals(c.elementAt(i).getNome())){
+        	nomeEsistente = false;
+        	for(int y=0; y<c.size(); y++) {
+        		 if(scelta.equals(c.elementAt(i).getNome())) {
         			 manager.getRosa().addAttaccante((Attaccante)c.elementAt(i));
         		 }
-        		 
         	 }
+     
         }
-        for(int i=0;i<7;i++){
+        for(int i=0;i<8;i++){
+        	System.out.print("Scrivi il nome del centrocampista " + (i+1) + " che vuoi acquistare: ");
         	scelta = tastiera.readLine();
        	 for(int y=0; y<c.size(); y++){
        		 if(scelta.equals(c.elementAt(i).getNome())){
@@ -81,7 +87,8 @@ public class Ese107 {
        		 }
        	 }
        }
-        for(int i=0;i<5;i++){
+        for(int i=0;i<6;i++){
+        	System.out.print("Scrivi il nome del difensore " + (i+1) + " che vuoi acquistare: ");
         	scelta = tastiera.readLine();
        	 for(int y=0; y<c.size(); y++){
        		 if(scelta.equals(c.elementAt(i).getNome())){
@@ -89,7 +96,8 @@ public class Ese107 {
        		 }
        	 }
        }
-        for(int i=0;i<2;i++){
+        for(int i=0;i<3;i++){
+        	System.out.print("Scrivi il nome del portiere " + (i+1) + " che vuoi acquistare: ");
         	scelta = tastiera.readLine();
        	 for(int y=0; y<c.size(); y++){
        		 if(scelta.equals(c.elementAt(i).getNome())){
